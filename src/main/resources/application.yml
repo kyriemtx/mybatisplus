@@ -1,0 +1,32 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8020
+  context-path: /
+
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mtxgenerator?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/pages/
+  thymeleaf:
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/pages/
+# Mybatis配置
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+
